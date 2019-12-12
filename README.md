@@ -147,14 +147,14 @@ None.
 <!-- CONTACT -->
 ## Contact
 
-Fanji - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
-Irfan Rona - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
-Luki - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
-Teguh - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
-Oghink - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
+1. Fanji - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
+2. Irfan Rona - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
+3. Luki - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
+4. Teguh - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
+5. Oghink - [@irfanrona](https://t.me/irfanrona) - irfanrona@outlook.com
 
-Project Link Backend: [https://github.com/luksluki/dilo-final-bookstore-be](https://github.com/luksluki/dilo-final-bookstore-be)
-Project Link Frontend: [https://github.com/luksluki/dilo-final-bookstore-fe](https://github.com/luksluki/dilo-final-bookstore-fe)
+- Project Link Backend: [https://github.com/luksluki/dilo-final-bookstore-be](https://github.com/luksluki/dilo-final-bookstore-be)
+- Project Link Frontend: [https://github.com/luksluki/dilo-final-bookstore-fe](https://github.com/luksluki/dilo-final-bookstore-fe)
 
 
 
