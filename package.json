@@ -1,0 +1,45 @@
+{
+  "name": "bookstore-api",
+  "version": "1.0.0",
+  "description": "Backend API Book Store Final Project DILO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "format": "prettier --config .prettierrc --write src/**/*.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.4.22",
+    "multer": "^1.4.2",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luksluki/dilo-final-bookstore-be.git"
+  },
+  "keywords": [
+    "book",
+    "store",
+    "api"
+  ],
+  "author": "Kelompok Paling Depan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luksluki/dilo-final-bookstore-be/issues"
+  },
+  "homepage": "https://github.com/luksluki/dilo-final-bookstore-be#readme"
+}
