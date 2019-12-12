@@ -37,6 +37,7 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
   * [Structure](#structure)
+* [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -122,7 +123,97 @@ npm start
 
 See the [open issues](https://github.com/luksluki/dilo-final-bookstore-be/issues) for a list of proposed features (and known issues).
 
+<!-- USAGE -->
+## Usage
 
+### USER
+
+- Registering User
+```sh
+url : /users
+method : POST
+head.param : {
+	"Content-Type": "application/json"
+}
+body.param : {
+	"name": "rona",
+	"email": "irfanrona@test.com",
+	"password": "qwerty123",
+	"umur": 23
+}
+```
+- Ambil Data ALL User where TOKEN (next update harusnya admin)
+```sh
+url : /users
+method : GET
+head.param : {
+	"Content-Type": "application/json",
+	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
+}
+```
+
+- Ambil Data This User where TOKEN
+```sh
+url : /users/me
+method : GET
+head.param : {
+	"Content-Type": "application/json",
+	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
+}
+```
+
+- Ambil TOKEN This User where TOKEN
+```sh
+url : /users/get-token
+method : GET
+head.param : {
+	"Content-Type": "application/json",
+	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
+}
+```
+
+- Login
+```sh
+url : /users/login
+method : POST
+head.param : {
+	"Content-Type": "application/json"
+}
+body.param : {
+	"email": "irfanrona@test.com",
+	"password": "qwerty123"
+}
+```
+
+- Logout
+```sh
+url : /users/logout
+method : POST
+head.param : {
+	"Content-Type": "application/json",
+	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
+}
+```
+
+- Logout ALL Devices
+```sh
+url : /users/logoutAll
+method : POST
+head.param : {
+	"Content-Type": "application/json",
+	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
+}
+```
+
+- Delete User
+```sh
+url : /users/me
+method : DELETE
+head.param : {
+	"Content-Type": "application/json",
+	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
+}
+```
 
 <!-- CONTRIBUTING -->
 ## Contributing
