@@ -139,7 +139,8 @@ body.param : {
 	"name": "rona",
 	"email": "irfanrona@test.com",
 	"password": "qwerty123",
-	"umur": 23
+	"umur": 23,
+	"role": "Administrator"
 }
 ```
 - Ambil Data ALL User where TOKEN (next update harusnya admin)
