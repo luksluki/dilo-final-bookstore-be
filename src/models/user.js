@@ -3,6 +3,7 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Task = require('./task')
+const Book = require('./book')
 
 const userSchema = new mongoose.Schema(
   {
@@ -26,6 +27,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: 6,
+      trim: true,
+    },
+    role: {
+      type: String,
+      required: true,
       trim: true,
     },
     tokens: [
