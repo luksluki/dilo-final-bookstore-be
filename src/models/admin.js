@@ -5,91 +5,91 @@ const jwt = require('jsonwebtoken')
 const Book = require('./book')
 
 const adminSchema = new mongoose.Schema(
-    {
-        name: {
-            type: String,
-            required: true,
-            trim: true,
-        },
-        email: {
-            type: String,
-            required: true,
-            trim: true,
-            lowercase: true,
-            validate(value) {
-                if (!validator.isEmail(value)) {
-                    throw new Error('email is invalid')
-                }
-            },
-        },
-        password: {
-            type: String,
-            required: true,
-            minlength: 6,
-            trim: true,
-        },
-        tokens: [
-            {
-                token: {
-                    type: String,
-                    required: true,
-                },
-            },
-        ],
-        avatar: {
-            type: Buffer,
-        },
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
     },
-    {
-        timestamps: true,
-    }
+    email: {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true,
+      validate(value) {
+        if (!validator.isEmail(value)) {
+          throw new Error('email is invalid')
+        }
+      },
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 6,
+      trim: true,
+    },
+    tokens: [
+      {
+        token: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+    avatar: {
+      type: Buffer,
+    },
+  },
+  {
+    timestamps: true,
+  }
 )
 
-userSchema.methods.generateAuthToken = async function () {
-    const user = this
-    const token = jwt.sign({ _id: user._id.toString() }, 'my_secret')
+adminSchema.methods.generateAuthToken = async function() {
+  const admin = this
+  const token = jwt.sign({ _id: admin._id.toString() }, 'my_secret')
 
-    user.tokens = user.tokens.concat({ token })
-    await user.save()
+  admin.tokens = admin.tokens.concat({ token })
+  await admin.save()
 
-    return token
+  return token
 }
 
-userSchema.virtual('tasks', {
-    ref: 'Task',
-    localField: '_id',
-    foreignField: 'owner',
+adminSchema.virtual('tasks', {
+  ref: 'Task',
+  localField: '_id',
+  foreignField: 'owner',
 })
 
-userSchema.statics.findByCredentials = async (email, password) => {
-    const user = await User.findOne({ email })
-    if (!user) {
-        throw new Error('Gagal Login')
-    }
+adminSchema.statics.findByCredentials = async (email, password) => {
+  const admin = await Admin.findOne({ email })
+  if (!admin) {
+    throw new Error('Gagal Login')
+  }
 
-    const isMatch = await bcrypt.compare(password, user.password)
-    if (!isMatch) {
-        throw new Error('Gagal Login')
-    }
+  const isMatch = await bcrypt.compare(password, admin.password)
+  if (!isMatch) {
+    throw new Error('Gagal Login')
+  }
 
-    return user
+  return admin
 }
 
-userSchema.pre('save', async function (next) {
-    const user = this
-    if (user.isModified('password')) {
-        user.password = await bcrypt.hash(user.password, 8)
-    }
+adminSchema.pre('save', async function(next) {
+  const admin = this
+  if (admin.isModified('password')) {
+    admin.password = await bcrypt.hash(admin.password, 8)
+  }
 
-    next()
+  next()
 })
 
-userSchema.pre('remove', async function (next) {
-    const user = this
-    await Task.deleteMany({ owner: user._id })
-    next()
+adminSchema.pre('remove', async function(next) {
+  const admin = this
+  await Task.deleteMany({ owner: admin._id })
+  next()
 })
 
-const User = mongoose.model('User', userSchema)
+const Admin = mongoose.model('Admin', adminSchema)
 
-module.exports = User
+module.exports = Admin
