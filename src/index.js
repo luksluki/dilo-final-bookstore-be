@@ -5,11 +5,13 @@ const app = express()
 const port = 3000
 
 const userRouter = require('./routers/user')
+const book = require('./routers/book')
 const taskRouter = require('./routers/task')
 
 app.use(express.json())
 app.use(cors())
 app.use(userRouter)
+app.use(book)
 app.use(taskRouter)
 
 app.listen(port, () => {

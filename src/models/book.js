@@ -31,10 +31,10 @@ const bookSchema = new mongoose.Schema(
       required: true,
       min: 1,
     },
-    // author: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: 'User',
-    // },
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
   },
   {
     timestamps: true,
