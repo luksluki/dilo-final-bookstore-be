@@ -2,38 +2,39 @@ const mongoose = require('mongoose')
 
 const bookSchema = new mongoose.Schema(
   {
-    judul: {
+    title: {
       type: String,
-      required: true,
+      required: [true, 'book name is required...'],
       trim: true,
     },
-    deskripsi: {
+    description: {
       type: String,
       trim: true,
+      required: [true, 'leave some description about the book..'],
     },
-    kategori: {
+    category: {
       type: String,
-      required: true,
+      required: [true, 'choose category about the book..'],
       trim: true,
     },
-    harga: {
+    price: {
       type: Number,
       required: true,
       trim: true,
     },
-    pengarang: {
+    bookImage: {
       type: String,
-      trim: true,
-    },
-    penerbit: {
-      type: String,
-      trim: true,
+      // required: [true, 'book image is required...'],
     },
     stock: {
       type: Number,
       required: true,
       min: 1,
     },
+    // author: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: 'User',
+    // },
   },
   {
     timestamps: true,
