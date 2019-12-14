@@ -127,8 +127,11 @@ See the [open issues](https://github.com/luksluki/dilo-final-bookstore-be/issues
 ## Usage
 
 ### USER
+<details>
+<summary>
+Registering User
+</summary>
 
-- Registering User
 ```sh
 url : /users
 method : POST
@@ -143,7 +146,13 @@ body.param : {
 	"role": "Administrator"
 }
 ```
-- Ambil Data ALL User where TOKEN (next update harusnya admin)
+</details>
+
+<details>
+  <summary>
+  Ambil Data ALL User where TOKEN (next update harusnya admin)
+  </summary>
+
 ```sh
 url : /users
 method : GET
@@ -152,8 +161,13 @@ head.param : {
 	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
 }
 ```
+</details>
 
-- Ambil Data This User where TOKEN
+<details>
+<summary>
+Ambil Data This User where TOKEN
+</summary>
+
 ```sh
 url : /users/me
 method : GET
@@ -162,8 +176,13 @@ head.param : {
 	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
 }
 ```
+</details>
 
-- Ambil TOKEN This User where TOKEN
+<details>
+<summary>
+Ambil TOKEN This User where TOKEN
+</summary>
+
 ```sh
 url : /users/get-token
 method : GET
@@ -172,8 +191,13 @@ head.param : {
 	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
 }
 ```
+</details>
 
-- Login
+<details>
+<summary>
+Login
+</summary>
+
 ```sh
 url : /users/login
 method : POST
@@ -185,8 +209,13 @@ body.param : {
 	"password": "qwerty123"
 }
 ```
+</details>
 
-- Logout
+<details>
+<summary>
+Logout
+</summary>
+
 ```sh
 url : /users/logout
 method : POST
@@ -195,8 +224,13 @@ head.param : {
 	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
 }
 ```
+</details>
 
-- Logout ALL Devices
+<details>
+<summary>
+Logout ALL Devices
+</summary>
+
 ```sh
 url : /users/logoutAll
 method : POST
@@ -205,8 +239,13 @@ head.param : {
 	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
 }
 ```
+</details>
 
-- Delete User
+<details>
+<summary>
+Delete User
+</summary>
+
 ```sh
 url : /users/me
 method : DELETE
@@ -215,6 +254,88 @@ head.param : {
 	"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
 }
 ```
+</details>
+
+### BOOK
+<details>
+<summary>
+Insert Book
+</summary>
+
+```sh
+url : /books
+method : POST
+head.param : {
+	"Content-Type": "application/json",
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
+}
+body.param : {
+	"title": "Cinta Kayaknya",
+	"author": "Mawang",
+	"description": "Sebuah Kisah kasih di sekolah",
+	"category": "Drama",
+	"price": 50000,
+  "stock": 23,
+  "bookImage": "public/uploads/image.png" //optional
+}
+```
+</details>
+
+<details>
+  <summary>
+  Ambil Semua Buku
+  </summary>
+
+```sh
+url : /books
+method : GET
+```
+</details>
+
+<details>
+<summary>
+Ambil Buku by ID
+</summary>
+
+```sh
+url : /books/{id}
+method : GET
+```
+</details>
+
+### TRANSACTION
+<details>
+<summary>
+Insert Transactions
+</summary>
+
+```sh
+url : /transactions
+method : POST
+head.param : {
+	"Content-Type": "application/json",
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGYxZjJmNjMxZWQzMTFkZDRlMWFmNjQiLCJpYXQiOjE1NzYxMzc0NjJ9.b-mVSypeerZKmLZy0c3yYJfHEXArpzzhBicXoRmTI34"
+}
+body.param : {	
+	"owner": "5df1f28a31ed311dd4e1af62",
+	"orders": [
+		{"book": "5df4ae66e1891203322f1a42"},
+		{"book": "5df4ae66e1891203322f1a43"}
+		]
+}
+```
+</details>
+
+<details>
+  <summary>
+  Show All Transaction
+  </summary>
+
+```sh
+url : /transactions
+method : GET
+```
+</details>
 
 <!-- CONTRIBUTING -->
 ## Contributing
